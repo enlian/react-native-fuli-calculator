@@ -3,7 +3,7 @@ import { Platform, StyleSheet, View, TextInput, TouchableOpacity, Keyboard } fro
 import { SafeAreaView } from 'react-navigation'
 import Text from './../../../commonComponent/TextWrapper'
 import Header from './../../../commonComponent/Header'
-import {px,formatMoney,px1,DesignHeight} from './../../../utils/CommonUtils'
+import {px,formatMoney,px1,DesignHeight,formatMoneyToWan} from './../../../utils/CommonUtils'
 
 
 export default class Calculator extends PureComponent {
@@ -174,12 +174,12 @@ export default class Calculator extends PureComponent {
                 </Text>
 
                 <Text style={styles.resultNum}>
-                  {formatMoney(this.state.totalReturn) || 0}
+                  {formatMoneyToWan(this.state.totalReturn,2) || 0}
                 </Text>
 
-                <Text style={styles.resultLabelEnd}>
-                  元
-                </Text>
+                {/*<Text style={styles.resultLabelEnd}>*/}
+                  {/*元*/}
+                {/*</Text>*/}
 
               </View>
 
@@ -189,11 +189,11 @@ export default class Calculator extends PureComponent {
                 </Text>
 
                 <Text style={styles.resultNum}>
-                  {formatMoney(this.state.returnMoney)}
+                  {formatMoneyToWan(this.state.returnMoney,2)}
                 </Text>
-                <Text style={styles.resultLabelEnd}>
-                  元
-                </Text>
+                {/*<Text style={styles.resultLabelEnd}>*/}
+                  {/*元*/}
+                {/*</Text>*/}
               </View>
 
 
