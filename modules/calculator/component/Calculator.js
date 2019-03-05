@@ -166,47 +166,47 @@ export default class Calculator extends PureComponent {
 
             <View style={styles.resultBox}>
 
-              <Text style={styles.resultTitle}>结果：</Text>
+              <Text style={styles.resultTitle}>计算结果：</Text>
 
-              <View style={styles.resultTextBox}>
+              <Text style={styles.resultTextBox}>
                 <Text style={styles.resultLabel}>
-                  - 回款总额
+                  - 总回款
                 </Text>
 
                 <Text style={styles.resultNum}>
-                  {formatMoneyToWan(this.state.totalReturn,2) || 0}
+                  {' '+formatMoneyToWan(this.state.totalReturn,2) || 0}
                 </Text>
 
                 {/*<Text style={styles.resultLabelEnd}>*/}
                   {/*元*/}
                 {/*</Text>*/}
 
-              </View>
+              </Text>
 
-              <View style={styles.resultTextBox}>
+              <Text style={styles.resultTextBox}>
                 <Text style={styles.resultLabel}>
                   - 总利息
                 </Text>
 
                 <Text style={styles.resultNum}>
-                  {formatMoneyToWan(this.state.returnMoney,2)}
+                  {' '+formatMoneyToWan(this.state.returnMoney,2)}
                 </Text>
                 {/*<Text style={styles.resultLabelEnd}>*/}
                   {/*元*/}
                 {/*</Text>*/}
-              </View>
+              </Text>
 
 
-              <View style={styles.resultTextBox}>
+              <Text style={styles.resultTextBox}>
 
                 <Text style={styles.resultLabel}>
-                  - 复合收益率
+                  - 总利率
                 </Text>
 
                 <Text style={styles.resultNum}>
-                  {this.state.totalRate + ' %'}
+                  {' '+this.state.totalRate + ' %'}
                 </Text>
-              </View>
+              </Text>
 
 
             </View>
@@ -288,9 +288,10 @@ const styles = StyleSheet.create({
   },
   resultTextBox: {
     width: '100%',
-    marginBottom: px(10),
+    marginBottom: px(15),
     flexDirection: 'row',
     height: px(20),
+    //lineHeight:px(20),
     justifyContent: 'flex-start',
     alignItems: 'center',
     //backgroundColor:'#fffcc4'
@@ -308,6 +309,5 @@ const styles = StyleSheet.create({
   resultNum: {
     color: 'red',
     fontSize: px(18),
-    marginHorizontal: px(3)
   },
 })
